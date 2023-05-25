@@ -63,14 +63,14 @@ INSERT INTO advertisement(ad_id, status, manager_email) VALUES(UUID_TO_BIN(UUID(
 SELECT
     BIN_TO_UUID(factory_id) as factory_id
 FROM factory;
--- 2b398f8a-c217-11ec-baec-d322339a6943
+-- 320fe0b2-fa97-11ed-8923-0aebfd403c0e
 
 SELECT
     BIN_TO_UUID(ad_id) as ad_id
 FROM advertisement;
--- 90d718bc-c217-11ec-baec-d322339a6943
+-- 34371bb1-fa97-11ed-8923-0aebfd403c0e
 
 INSERT INTO product(product_id, sku, name, price, stock, factory_id, ad_id)
-VALUES(UUID_TO_BIN(UUID()),'CP-502101','부산도너츠', 19900, 3, UUID_TO_BIN("2b398f8a-c217-11ec-baec-d322339a6943"),
-UUID_TO_BIN('90d718bc-c217-11ec-baec-d322339a6943'));
+VALUES(UUID_TO_BIN(UUID()),'CP-502101','부산도너츠', 19900, 3, UUID_TO_BIN("320fe0b2-fa97-11ed-8923-0aebfd403c0e"),
+UUID_TO_BIN('34371bb1-fa97-11ed-8923-0aebfd403c0e'));
 
