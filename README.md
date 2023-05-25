@@ -1,3 +1,8 @@
+< 노션 스탭별 정리 >
+- 23.05.25 스탭3까지
+
+https://raspy-replace-d97.notion.site/23-05-25-DAY-2-c8abba1559db482caaafcd25e3045657
+
 ## 목표
 - 메시지 큐의 Pub/Sub 패턴과 Producer/Consumer 패턴의 차이를 이해한다
 - DB와 서버와의 통신이 가능하도록 연결한다
