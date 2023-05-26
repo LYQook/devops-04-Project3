@@ -30,9 +30,9 @@ app.post("/checkout", connectDb, async (req, res, next) => {
   )
   if (result.length > 0) {
     const product = result[0]
-    if (product.stock > 0) {
-      await req.conn.query(setStock(product.product_id, product.stock - 1))
-      return res.status(200).json({ message: `구매 완료! 남은 재고: ${product.stock - 1}`});
+    if (product.stock >= 0 && product.stock >= req.body.MessageAttributeProductCnt) {
+      await req.conn.query(setStock(product.product_id, product.stock - req.body.MessageAttributeProductCnt))
+      return res.status(200).json({ message: `구매 완료! 남은 재고: ${product.stock - req.body.MessageAttributeProductCnt}`});
     }
     else {
       await req.conn.end()
@@ -52,6 +52,14 @@ app.post("/checkout", connectDb, async (req, res, next) => {
             StringValue: req.body.MessageAttributeFactoryId,
             DataType: "String",
           },
+          MessageAttributeRequester: {
+            StringValue: req.body.MessageAttributeRequester,
+            DataType: "String",
+          },
+          MessageAttributeProductCnt: {
+            StringValue: req.body.MessageAttributeProductCnt,
+            DataType: "String",
+          }
         },
         TopicArn: process.env.TOPIC_ARN
       }
