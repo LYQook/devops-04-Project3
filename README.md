@@ -1,4 +1,5 @@
-![](https://contents-img-jeonghun.s3.ap-northeast-2.amazonaws.com/project3/project3-project-step3.png)
+![image](https://github.com/LYQook/devops-04-Project3/assets/126463472/462a8eeb-97a8-4b56-8589-135ab1d4c600)
+
 
 ## 목표
 - DB와 서버와의 통신이 가능하도록 연결한다.
